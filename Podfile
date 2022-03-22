@@ -8,5 +8,7 @@ target 'CreditCardList' do
   # Pods for CreditCardList
   pod 'Kingfisher'
   pod 'lottie-ios'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
 end
