@@ -83,5 +83,18 @@ class CardListViewController : UITableViewController {
         
         detailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.show(detailViewController, sender: nil)
+        
+        //셀을 선택하게 된다면, 해당 셀이 Selected 됐다고 FireBase 에 해당 cardId 의 키값으로 통하여
+        //isSelected의 값에 전달을 해준다.
+        let cardID = creditCardList[indexPath.row].id
+        ref.child("Item\(cardID)/isSelected").setValue(true)
+        
+        
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+        
+    }
+    
 }
